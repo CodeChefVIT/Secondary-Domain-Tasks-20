@@ -3,7 +3,6 @@ FROM node:12
 
 WORKDIR /app
 
-
 COPY package*.json ./
 
 RUN npm install
@@ -12,4 +11,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "nodemon", "app.js" ]
+CMD [ "node", "app.js" ]

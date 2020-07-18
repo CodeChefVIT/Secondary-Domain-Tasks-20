@@ -1,9 +1,15 @@
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 import requests
 import json
 
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 #------------------------------------------------------------------------
-username = ""
-token = ""
+username = os.environ.get("GITHUB_USERNAME")
+token = os.environ.get("GITHUB_TOKEN")
 #------------------------------------------------------------------------
 
 headers = {
@@ -14,6 +20,8 @@ params = {}
 
 url = "https://api.github.com/"
 
+print(username)
+print(token)
 cf = 0
 while(cf==0):
     choice = int(input('''Choose:
@@ -56,6 +64,7 @@ if p.status_code == 201:
     headers.pop("Accept")
 else:
     print("Error! Repository could not be generated.")
+    print("Error Code:",p.status_code)
     exit()
 
 wh_op = str(input("Create a webhook? (y/N): "))
@@ -73,6 +82,7 @@ if wh_op.lower() == "y":
         print("Success! The hook has been created.")
     else:
         print("Error! The hook could not be created.")
+        print("Error Code:",p.status_code)
 
 tfr_op = str(input("Transfer repository to an organization? (y/N): "))
 if tfr_op.lower() == "y":
@@ -84,3 +94,4 @@ if tfr_op.lower() == "y":
         print("Success! The repository has been transferred to {}.".format(organization))
     else:
         print("Error! The repository could not be transferred.")
+        print("Error Code:",p.status_code)

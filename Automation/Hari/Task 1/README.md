@@ -1,7 +1,8 @@
 # Repo-Generator
 Create repositories quickly with these Python scripts. <br>
 `repos.py` creates repositories individually. <br>
-`bulk_repos.py` creates repositories in bulk with the requirements set beforehand (using a template repository).
+`bulk_repos.py` creates repositories in bulk with the requirements set beforehand (using a template repository). <br>
+`bulk_yaml_repos.py` creates repositories in bulk with the details specified in `details.yaml`.
 
 ## Features
 - Create personal or organization repositories.
@@ -11,9 +12,9 @@ Create repositories quickly with these Python scripts. <br>
 - Add webhooks.
 
 ## Requirements
-Clone this repository and navigate to this folder.
-The scripts use the `requests` and the `python-dotenv` libraries, so run this command. <br>
-```pip install requests python-dotenv```
+Fork and clone this repository and navigate to this folder.
+Run this command. <br>
+```pip install -r requirements.txt```
 
 ## Setup
 Create a personal access token as specified [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
@@ -36,4 +37,5 @@ WH_EVENTS = "Webhook permissions, ["push","pull_request"] is the default"
 WH_URL = "Webhook URL"
 ORGANIZATION = "Organization's username"
 ```
+Fill the details of the repositories you want to create as specified in `details.yaml` then run the `bulk_yaml_repos.py` script to generate those repositories. <br>
 Check `licenses.txt` out for license keywords, if you want to add a license.

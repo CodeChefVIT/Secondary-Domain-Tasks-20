@@ -9,8 +9,8 @@
 - This is only suitable for learning purposes. Do not use in production.
 
 
-![Elasticsearch In Browser](/elasticsearch.png "Elasticsearch In Action")
+![Elasticsearch In Browser](/Microservices/kibana_elasticsearch/elasticsearch.png "Elasticsearch In Action")
 
-![Kibana In Browser](/kibana.png "Kibana In Action")
+![Kibana In Browser](/Microservices/kibana_elasticsearch/kibana.png "Kibana In Action")
 
 

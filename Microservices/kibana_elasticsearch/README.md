@@ -7,3 +7,10 @@
 - To stop the Elasticsearch and Kibana containers, run - **docker-compose stop**
 - To stop and completly remove all the containers, networks, volumes created by Elasticsearch and Kibana, run - **docker-compose down**
 - This is only suitable for learning purposes. Do not use in production.
+
+
+![Elasticsearch In Browser](/elasticsearch.png "Elasticsearch In Action")
+
+![Kibana In Browser](/kibana.png "Kibana In Action")
+
+

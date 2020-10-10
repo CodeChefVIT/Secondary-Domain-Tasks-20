@@ -1,3 +1,4 @@
+import hashlib
 try:
    input = raw_input
 except NameError:
@@ -58,3 +59,12 @@ enc = encrypt_string(s)
 print("Encrypted message: " + enc + "\n")
 dec = decrypt_string(enc)
 print("Decrypted message: " + dec + "\n")
+
+a = hashlib.md5(s.encode())
+b = hashlib.md5(dec.encode())
+print("Hash of original message : " + a.hexdigest() +"\n")
+print("Hash of decrypted message : " + b.hexdigest() +"\n")
+if a.hexdigest() == b.hexdigest() :
+   print('Values of both hashes are same')
+else :
+   print('Values of both hashes are different')
